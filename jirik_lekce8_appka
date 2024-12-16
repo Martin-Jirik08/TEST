@@ -1,0 +1,44 @@
+#import knihoven
+from random import randint
+
+#cml calculator
+def cml_cal(hmotnost):
+    try:
+        hmotnost = float(hmotnost)
+    except ValueError:
+        return "Zadaná hodnota musí být číslo"
+    bmr = hmotnost * 24.2
+    cml = bmr * 1.2
+    cml = round(cml, 2)
+    return cml
+
+#funkce k přiřazení oslovení
+def osloveni(pohlavi):
+    sex = pohlavi
+    if sex == "Male":
+        reference = "dear Sir"
+    elif sex == "Female":
+        reference = "dear Madam"
+    else:
+        reference = "unclear"
+        return
+    return "Your reference is", reference, "."
+
+#generování dřepů
+def generovani_drepu():
+    integer = randint(1,10,)
+    return "Teď udělej", integer, "dřepů."
+
+#rozdělení písmen
+def users_load():
+    users = "Martin,Viki,Nela "
+    for letter in users:
+        print(letter)
+
+#rozdělení listu
+def user_check():
+    print("Pod tímhle řádkem budou vypsána uživatelská jména, každé na novém řádku")
+    username = ["Martin", "Viki", "Nela"]
+    for x in range(3):
+        print(username[x])
+

@@ -4,6 +4,8 @@ from main_jirik import *
 
 
 ### GUI functions
+def appear():
+    pass
 def my_first_gui_function():
     try:
         hmotnost = float(txtbox_weight.value)
@@ -12,11 +14,19 @@ def my_first_gui_function():
         text_cml.value = cml
     except ValueError:
         text_cml.value = "Zadaná hodnota musí být číslo"
+def gui_choice():
+    us_choice = choice.value
+    #print(choice.value)
+    user_text_choice.value = user_choice(us_choice)
+
+
+
     
 ### GUI App
 app = App(title="My App",
-          width=775,
-          height=650
+          width=1075,
+          height=1050,
+          layout="auto"
           )
 
 ## Window 1
@@ -28,9 +38,7 @@ text_welcome = Text(window1, text=(f"Hi, user!"))
 # Input activity factor
 text_af = Text(
     window1,
-    text=(
-        "        Please enter your activity factor for today:"
-    )
+    text=("Please enter your activity factor for today:")
 )
 txtbox_af = TextBox(window1)
 
@@ -48,12 +56,22 @@ text_cml = Text(window1)
 image_widget = Picture(
     window1,
     image="resources_jirik/images/calculating_cml.png",
-    width=680,
-    height=480,
+    width=80,
+    height=80,
     align="bottom"
 )
 
 button = PushButton(window1, text = "Odeslat", command=my_first_gui_function)
+
+choice = ButtonGroup(app, options=["cheese", "ham", "jam"], selected="ham", command=appear)
+
+user_button = PushButton(
+    app,
+    text="vybrat",
+    command=gui_choice
+)
+user_text_choice = Text(app, text = "")
+picture = Picture(app, image="resources_jirik/images/python_snake.png")
 
 app.display()
 

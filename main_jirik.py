@@ -7,6 +7,10 @@ def calculate_cml(hmotnost, af):
     cml = bmr * af
     cml = round(cml, 2)
     return cml
+def user_choice(us_choice):
+    user_messaage = "Your choice is: " + us_choice
+    return user_messaage
+
 
 # Main Window Variables
 todays_date_str = dt.date.today().strftime("%d-%m-%Y") #this is a string

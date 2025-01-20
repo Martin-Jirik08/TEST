@@ -1,6 +1,6 @@
 ### GUI imports
 from guizero import *
-from main import *
+from main_jirik import *
 
 
 ### GUI functions

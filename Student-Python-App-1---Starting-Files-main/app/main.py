@@ -1,5 +1,5 @@
 # Importing all app imports
-from config import *
+from config_jirik import *
 
 # Main Window Functions
 
